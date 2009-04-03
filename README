@@ -4,7 +4,7 @@ BOOKMARKET
 A simple means of using a bookmark to add your javascript to an external page.
 Think of your Del.ico.us bookmarking tool - it can be used to save information
 to your site from any other site out there. Works with the restful_authentication
-plugin
+plugin.
 
 === HOW IT WORKS
 The bookmark part simply 'injects' a .js file into the page, by adding it to
@@ -12,12 +12,20 @@ the HEAD element. Your users will put it in their toolbar, and click on it when
 they want to use it.
 
 === WHAT CAN IT DO?
-Anything you want! You can parse the page DOM with HPRICOT or some other tool,
-or you can just save the URL. It's entirely up to you! This is very similar to
-how THISNEXT toolbar works, at least the beginning part!
+Anything you want! The default action saves the URL and title of the bookmarked
+page, along with a 'description' field. You can go ahead and add functionality to 
+parse the page DOM with HPRICOT or anything else.
 
-=== SAMPLE
+=== ONLINE DEMO
 Coming soon!
+
+=== INSTALLATION
+First, you must have a restful_authentication user model. 
+	1)
+	2) /script/generate authenticated user sessions
+	3) rake db:migrate
+
+
 
 === NOTES
 I am building a very basic example of the tool. It can be used for much more
