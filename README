@@ -1,14 +1,21 @@
 BOOKMARKET
 
 === WHAT IS IT?
-A simple means of using a bookmark to add your javascript to an external page.
-Think of your Del.ico.us bookmarking tool - it can be used to save information
-to your site from any other site out there. Works with the restful_authentication
-plugin.
+Bookmark webpages to your application, save the url, title and description into
+a model on your site.
+
+It uses a standard browser bookmark to add javascript to an external page.
+it can be used to save information to your site from any other site out there. 
+Works with the restful_authentication plugin so you controll who is using it.
 
 === HOW IT WORKS
+./script/generate bookmark Bookmark to create controller, views, model migration and test
+for saving the bookmarks. That's it! You can name the class whatever you want,
+Favorites and Pages were two others make sense.
+
 The bookmark part simply 'injects' a .js file into the page, by adding it to
-the HEAD element. Your users will put it in their toolbar, and click on it when
+the HEAD element. This brings up a pop-over window with an iframe that goes to your 
+site. Your users will put it in their toolbar, and click on it when
 they want to use it.
 
 === WHAT CAN IT DO?
@@ -44,7 +51,12 @@ plural of whatever you called your bookmarker). You will see a link to the bookm
 If you are using FireFox, DRAG the link to the top of your screen. This will be your bookmark.
 Then, open another page, and click the bookmark. YOu should see the bookmarker tool appear!
 
+
 === NOTES
+CURRENTLY ONLY WORKS ON localhost:3000. I am working on this, since it's obviously
+very limiting. You can change the javascript file manually to resolve this if you 
+need it now. But I will find a way around it soon enough.
+
 I am building a very basic example of the tool. It can be used for much more
 powerful things! You will notice that the URL of the script is a directory,
 not a filename. This resolves some cross browser issues. For PHP, just make
@@ -62,7 +74,7 @@ function() {            #start the function call
 var x=document.getElementsByTagName('head').item(0);  #Grab HEAD element
 var so=document.createElement('script');              #Create SCRIPT element
 
-var s='http://www.yoursite.com/adder/';             #URL for the JS file
+var s='http://www.yoursite.com/bookmarks/script/';             #URL for the JS file
 if(typeof so !='object')                            #Make sure you can add it
     so=document.standardCreateElement('script');    #Create script element
     so.setAttribute('src',s);                       #Set src to your site
@@ -72,13 +84,8 @@ if(typeof so !='object')                            #Make sure you can add it
 )();                                                #Execute the function
 
 and the whole shebang uninterrupted
-javascript:(function()%20{var%20x=document.getElementsByTagName('head').item(0);var%20so=document.createElement('script');var%20s='http://www.yoursite.com/adder/';if(typeof%20so%20!='object')%20so=document.standardCreateElement('script');so.setAttribute('src',s);so.setAttribute('type','text/javascript');x.appendChild(so);})();
+javascript:(function()%20{var%20x=document.getElementsByTagName('head').item(0);var%20so=document.createElement('script');var%20s='http://www.yoursite.com/bookmarks/script/';if(typeof%20so%20!='object')%20so=document.standardCreateElement('script');so.setAttribute('src',s);so.setAttribute('type','text/javascript');x.appendChild(so);})();
 
-=== SETUP
-This bookmarker tool works with the excellent Restful Authentication plugin
-First, you will need to install restful_authentication and create the user/session model.
- script/plugin install restful_authentication
-then
  script/generate authenticated user sessions 
 This is nice because it also creates a bunch of tests for you.
 
