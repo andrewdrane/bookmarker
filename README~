@@ -53,6 +53,10 @@ Then, open another page, and click the bookmark. YOu should see the bookmarker t
 
 
 === NOTES
+CURRENTLY ONLY WORKS ON localhost:3000. I am working on this, since it's obviously
+very limiting. You can change the javascript file manually to resolve this if you 
+need it now. But I will find a way around it soon enough.
+
 I am building a very basic example of the tool. It can be used for much more
 powerful things! You will notice that the URL of the script is a directory,
 not a filename. This resolves some cross browser issues. For PHP, just make

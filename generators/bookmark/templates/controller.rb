@@ -7,7 +7,7 @@ class <%= plural_name.underscore.camelize %>Controller < ApplicationController
   def script
     #Renders the javascript file that will get open the popup
     #This is the action called by the bookmarklet
-    render :file=>"#{RAILS_ROOT}/public/javascripts/<%=table_name%>.js"
+    render :layout => false
   end
 
   def new
