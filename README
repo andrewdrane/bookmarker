@@ -12,8 +12,10 @@ the HEAD element. Your users will put it in their toolbar, and click on it when
 they want to use it.
 
 === WHAT CAN IT DO?
-Anything you want! The default action saves the URL and title of the bookmarked
-page, along with a 'description' field. You can go ahead and add functionality to 
+Short answer: Bookmark webpages to your application, save the url, title and description into
+a model on your site.
+
+The long answer: Anything you want! You can go ahead and add functionality to 
 parse the page DOM with HPRICOT or anything else.
 
 === ONLINE DEMO
