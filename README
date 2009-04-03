@@ -20,12 +20,27 @@ parse the page DOM with HPRICOT or anything else.
 Coming soon!
 
 === INSTALLATION
-First, you must have a restful_authentication user model. 
-	1)
-	2) /script/generate authenticated user sessions
+First, you must have a restful_authentication user model. Install restful_authentication
+and generate it. You should read more about this, but this is the simple version:
+	1) ./script/plugin install git://github.com/technoweenie/restful-authentication.git	
+	2) ./script/generate authenticated user sessions
+	3) rake db:migrate
+Add the line following line to your
+include AuthenticatedSystem
+to your ApplicationController class in the file app/controllers/application.rb
+Start up your server and create a user account and login before proceeding. To create a user, go to users/new and create a username and password.
+
+Then you can generate your bookmarking model! I'll call this one Bookmark, you can call it
+Page, Favorite or anything else you want.
+	1) ./script/plugin install git://github.com/andrewdrane/bookmarker.git
+	2) ./script/generate bookmark Bookmark
 	3) rake db:migrate
 
-
+Now, fire up your local server, or restart it if you were allready running.
+Then, point your browser to localhost:3000/bookmarks (or pages, or favorites, it's the 
+plural of whatever you called your bookmarker). You will see a link to the bookmark tool.
+If you are using FireFox, DRAG the link to the top of your screen. This will be your bookmark.
+Then, open another page, and click the bookmark. YOu should see the bookmarker tool appear!
 
 === NOTES
 I am building a very basic example of the tool. It can be used for much more
