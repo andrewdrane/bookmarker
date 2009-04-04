@@ -1,4 +1,5 @@
-BOOKMARKET
+BOOKMARKER PLUGIN FOR RAILS. 
+GENERATE A BOOKMARKING TOOL FOR YOUR RAILS APP!
 
 === WHAT IS IT?
 Bookmark webpages to your application, save the url, title and description into
