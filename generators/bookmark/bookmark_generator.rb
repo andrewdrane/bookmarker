@@ -21,6 +21,7 @@ class BookmarkGenerator < Rails::Generator::NamedBase
       #controller
       m.template "controller.rb", "app/controllers/#{plural_name}_controller.rb"
       #javascript file that actually imports the bookmark
+      m.template "js.js", "public/javascripts/#{plural_name}_bookmarker.js"
 
       #views
       m.directory "app/views/#{plural_name}"
