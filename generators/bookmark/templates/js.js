@@ -1,10 +1,13 @@
 //avoid bookmarking <%=singular_name%> pages
 var bookmarkerURL = "http://%H%/";
 
+//declare the variables
+var bookmarker_inner_style, bookmarker_close_link_style,
+    bookmarker_if_style, bookmarker_container_awd_style
 //Define some styles for the objects
-//
-//position:absolute; z-index:2147483640; width:700px; border:5px solid #000066; text-align:right; height:520px; top:10px; background-color:white;
-var bookmarker_inner_style = {
+//Standard set of styles for NON-IE browsers
+if(navigator.userAgent.indexOf("MSIE") < 0 ){
+    bookmarker_inner_style = {
         position : "absolute",
         zIndex : "2147483640",
         width : "700px",
@@ -15,22 +18,49 @@ var bookmarker_inner_style = {
         left : "-350px",
         backgroundColor : "white"
     }
-var bookmarker_close_link_style = {
+    bookmarker_close_link_style = {
         margin : "0px",
         padding : "0px",
         color : "#000066",
         fontSize : "11px"
     }
-var <%=singular_name%>_if_style = {
+    bookmarker_if_style = {
         border : "0px",
         width : "700px",
         height : "500px"
     }
-var <%=singular_name%>_container_awd_style = {
+    bookmarker_container_awd_style = {
         width : "1px",
         margin : "0px auto",
         position : "relative"
     }
+}else{
+    //If we are using IE, we need to take a different approach
+    bookmarker_inner_style = {
+        width : "700px",
+        textAlign : "right",
+        height : "520px",
+        margin : "0px auto",
+        backgroundColor : "white"
+    }
+    bookmarker_close_link_style = {
+        margin : "0px",
+        padding : "0px",
+        color : "#000066",
+        fontSize : "11px",
+        display : "block",
+        textAlign : "right"
+    }
+    bookmarker_if_style = {
+        border : "0px",
+        width : "700px",
+        height : "500px"
+    }
+    bookmarker_container_awd_style = {
+        margin : "0px auto",
+        borderBottom : "5px solid #000066"
+    }
+}
 
 if( window.location.href.substring(0,bookmarkerURL.length)==bookmarkerURL ){
     alert('You can\'t bookmark a local page page!');
@@ -42,43 +72,43 @@ if( window.location.href.substring(0,bookmarkerURL.length)==bookmarkerURL ){
     //make ID collisions less likely
 
     c=document.createElement('div');
-        c.setAttribute("id","<%=singular_name%>_holder_awd");
+        c.setAttribute("id","bookmarker_holder_awd");
         c.style.textAlign="center";
         c.style.zIndex="2147483640";
         c.innerHTML="\n\
-        <div id='<%=singular_name%>_container_awd'>\n\
-            <a name='<%=singular_name%>_top'></a>\n\
+        <div id='bookmarker_container_awd'>\n\
+            <a name='bookmarker_top'></a>\n\
             <div id='bookmarker_inner'>\n\
-                <a href='javascript:<%=singular_name%>_hide_adder()' id='bookmarker_closer' style='float:none'>Close</a>&nbsp;&nbsp;\n\
-                <iframe style='' id='<%=singular_name%>_if'></iframe>\n\
+                <a href='javascript:bookmarker_hide_adder()' id='bookmarker_closer' style='float:none'>Close</a>&nbsp;&nbsp;\n\
+                <iframe style='' id='bookmarker_if' frameborder='0'></iframe>\n\
             </div>\n\
         </div>";
 
     //avoid double bookmarking. Just make the window visible again if it was hidden
-    if(document.getElementById('<%=singular_name%>_container_awd')){
-        document.getElementById('<%=singular_name%>_container_awd').style.display="block";
+    if(document.getElementById('bookmarker_container_awd')){
+        document.getElementById('bookmarker_container_awd').style.display="block";
     }else{
         //insert the DIV and iframe
         b.insertBefore(c,b.childNodes [0]);
         //set the styles
         apply_all_styles('bookmarker_inner', bookmarker_inner_style);
         apply_all_styles('bookmarker_closer', bookmarker_close_link_style);
-        apply_all_styles('<%=singular_name%>_if', <%=singular_name%>_if_style);
-        apply_all_styles('<%=singular_name%>_container_awd', <%=singular_name%>_container_awd_style)
+        apply_all_styles('bookmarker_if', bookmarker_if_style);
+        apply_all_styles('bookmarker_container_awd', bookmarker_container_awd_style)
 
         //set the source for the iframe back to us
-        document.getElementById('<%=singular_name%>_if').src=bookmarkerURL+"<%=plural_name%>/new?url="+escape(window.location.href)+"&title="+escape(document.title);
+        document.getElementById('bookmarker_if').src=bookmarkerURL+"<%=plural_name%>/new?url="+escape(window.location.href)+"&title="+escape(document.title);
     }
 
     //Move to the top of the window so the user can actually see the bookmark!
-    window.location.hash="<%=singular_name%>_top";
+    window.location.hash="bookmarker_top";
 }
 
 /*
  * Functions
 */
-function <%=singular_name%>_hide_adder(){
-    document.getElementById('<%=singular_name%>_container_awd').style.display="none";
+function bookmarker_hide_adder(){
+    document.getElementById('bookmarker_container_awd').style.display = 'none';
 }
 
 //iterate through json object, add each style name and value

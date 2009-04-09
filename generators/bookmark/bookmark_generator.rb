@@ -13,6 +13,7 @@ class BookmarkGenerator < Rails::Generator::NamedBase
       #Tests
       m.template "unit_test.rb", "test/unit/#{singular_name}_test.rb"
       m.template "controller_test.rb", "test/functional/#{plural_name}_test.rb"
+      m.template "fixture.yml", "test/fixtures/#{plural_name}.yml"
 
       #Class
       m.template "model.rb", "app/models/#{singular_name}.rb"
