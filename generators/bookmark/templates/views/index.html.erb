@@ -19,7 +19,4 @@
 
 <br />
 
-<a href="javascript:(function()%20{var%20x=document.getElementsByTagName('head').item(0);var%20so=document.createElement('script'
-);var%20s='<%= location %><%=plural_name%>/script/';if(typeof%20so%20!='object')%20so=document.standardCreateElement('script');so
-.setAttribute('src',s);so.setAttribute('type','text/javascript');x.appendChild(so);})();
-"><%=plural_name%> Bookmark</a>
+<%%=bookmark_link "<%=plural_name%>" %>

@@ -1,21 +1,17 @@
 class <%= plural_name.underscore.camelize %>Controller < ApplicationController
-  
+  include AuthBookmark
+
   #gotta be logged in, but don't want to use restful_auth login
-  before_filter :<%=table_name%>_login_required, :only=>[:new, :submit, :success, :failure]
+  before_filter :bookmarker_login_required, :only=>[:new, :submit, :success, :failure]
 
-  #Actions for using the bookmark.
-  def script
-    #Renders the javascript file that will get open the popup
-    #This is the action called by the bookmarklet
-    render :layout => false
-  end
-
+  #The new bookmark creation page
+  #this is the first screen you will see when you call the bookmarklet (assuming you are logged in)
   def new
-    #The new bookmark creation page
-    #this is the first screen you will see when you call the bookmarklet
     @url=params[:url]
     @title=params[:title]
     @<%=singular_name%> = <%= class_name %>.new
+
+    #Put any scraping stuff here.
 
     render :layout => '<%=file_path%>'
   end
@@ -93,12 +89,4 @@ class <%= plural_name.underscore.camelize %>Controller < ApplicationController
     end
   end
 
-  protected
-  def <%=table_name%>_login_required
-    if !logged_in?
-      store_location #research this
-      flash[:notice]="You must log in to use the <%=table_name%>!"
-      redirect_to :controller=>'<%=table_name%>', :action=>'login'
-    end
-  end
 end
