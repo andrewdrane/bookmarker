@@ -58,6 +58,7 @@ if(navigator.userAgent.indexOf("MSIE") < 0 ){
     }
     bookmarker_container_awd_style = {
         margin : "0px auto",
+        backgroundColor : "#FFFFFF",
         borderBottom : "5px solid #000066"
     }
 }
