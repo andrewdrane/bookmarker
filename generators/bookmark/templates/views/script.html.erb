@@ -1,2 +1,1 @@
-<%% the_js_file = render :file =>"#{RAILS_ROOT}/public/javascripts/<%=plural_name%>_bookmarker.js" %>
-<%%= the_js_file.gsub( '%H%', request.env['HTTP_HOST'].to_s ) %>
+<%%= @script_file_contents %>
