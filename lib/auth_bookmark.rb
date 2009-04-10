@@ -10,7 +10,7 @@ module AuthBookmark
     #Add our current working http location, so we don't have to worry about setting a variable
     @script_file_contents = script_file.read.gsub( '%H%', request.env['HTTP_HOST'].to_s )
     script_file.close
-    render :layout => false
+    render :text => @script_file_contents
   end
 
 
