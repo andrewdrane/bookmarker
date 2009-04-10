@@ -33,7 +33,6 @@ class BookmarkGenerator < Rails::Generator::NamedBase
       m.template "views/index.html.erb", "app/views/#{plural_name}/index.html.erb"
       m.template "views/show.html.erb", "app/views/#{plural_name}/show.html.erb"
       m.template "views/edit.html.erb", "app/views/#{plural_name}/edit.html.erb"
-      m.template "views/script.html.erb", "app/views/#{plural_name}/script.html.erb"
 
       #css
       m.template "css.css", "public/stylesheets/#{singular_name}.css"
