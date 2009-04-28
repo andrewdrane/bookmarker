@@ -34,8 +34,8 @@ parse the page DOM with HPRICOT or another scraping technology.
 
 
 === ONLINE DEMO
-Moving to heroku, back online soon
-
+Online demo is now on Heroku Garden. NOTE, I have disabled login for this demo - you do not need to create an account to add bookmarks. I will create another demo with full login next.
+http://bookmarker.herokugarden.com/bookmarks
 
 
 === INSTALLATION
