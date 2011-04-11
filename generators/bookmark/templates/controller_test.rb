@@ -22,11 +22,11 @@ class <%= plural_name.underscore.camelize %>ControllerTest < ActionController::T
   test "should create <%=singular_name%> and add it to user" do
     assert_difference('<%=class_name%>.count', 1) do
       login_as :quentin
-      post :submit, :<%=singular_name%>=>{:url=>'http://<%=singular_name%>.com', :title=>'Some <%=class_name%>', :description=>'This is a <%=singular_name%>'}
+      post :submit, :<%=singular_name%>=>{:bookmarker_url=>'http://<%=singular_name%>.com', :title=>'Some <%=class_name%>', :description=>'This is a <%=singular_name%>'}
     end
 
     #Use if you want to associate bookmarks with users
-    #assert_equal User.find_by_login('quentin').<%=plural_name%>[0].url, 'http://<%=singular_name%>.com'
+    #assert_equal User.find_by_login('quentin').<%=plural_name%>[0].bookmarker_url, 'http://<%=singular_name%>.com'
   end
 
 end

@@ -8,7 +8,7 @@
 
 <%% for <%=singular_name%> in @<%=plural_name%> %>
   <tr>
-    <td><%%=h <%=singular_name%>.url %></td>
+    <td><%%=h <%=singular_name%>.bookmarker_url %></td>
     <td><%%=h <%=singular_name%>.title %></td>
     <td><%%= link_to 'Show', "/<%=plural_name%>/show/#{<%=singular_name%>.id}" %></td>
     <td><%%= link_to 'Edit', "/<%=plural_name%>/edit/#{<%=singular_name%>.id}" %></td>

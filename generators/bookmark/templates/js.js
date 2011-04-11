@@ -98,7 +98,7 @@ if( window.location.href.substring(0,bookmarkerURL.length)==bookmarkerURL ){
         apply_all_styles('bookmarker_container_awd', bookmarker_container_awd_style)
 
         //set the source for the iframe back to us
-        document.getElementById('bookmarker_if').src=bookmarkerURL+"<%=plural_name%>/new?url="+escape(window.location.href)+"&title="+escape(document.title);
+        document.getElementById('bookmarker_if').src=bookmarkerURL+"<%=plural_name%>/new?bookmarker_url="+escape(window.location.href)+"&title="+escape(document.title);
     }
 
     //Move to the top of the window so the user can actually see the bookmark!

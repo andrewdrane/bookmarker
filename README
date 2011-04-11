@@ -34,8 +34,8 @@ parse the page DOM with HPRICOT or another scraping technology.
 
 
 === ONLINE DEMO
-Online demo is now on Heroku Garden. NOTE, I have disabled login for this demo - you do not need to create an account to add bookmarks. I will create another demo with full login next.
-http://bookmarker.herokugarden.com/bookmarks
+Unfortunately, not online anymore. I was hosting on Heroku Garden but it's since vanished :(
+
 
 
 === INSTALLATION
@@ -100,3 +100,9 @@ if(typeof so !='object')                              #Make sure you can add it
 
 and the whole shebang uninterrupted
 javascript:(function()%20{var%20x=document.getElementsByTagName('head').item(0);var%20so=document.createElement('script');var%20s='http://www.yoursite.com/bookmarks/script/';if(typeof%20so%20!='object')%20so=document.standardCreateElement('script');so.setAttribute('src',s);so.setAttribute('type','text/javascript');x.appendChild(so);})();
+
+
+Note April 10, 2011.
+It's come to my attention that "Url" is a reserve word in the current version of
+Rails. I am correcting this. Many thanks to Marmolin ( https://github.com/Marmolin )
+for pointing this out.

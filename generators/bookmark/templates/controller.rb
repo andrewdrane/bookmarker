@@ -7,7 +7,7 @@ class <%= plural_name.underscore.camelize %>Controller < ApplicationController
   #The new bookmark creation page
   #this is the first screen you will see when you call the bookmarklet (assuming you are logged in)
   def new
-    @url=params[:url]
+    @bookmarker_url=params[:bookmarker_url]
     @title=params[:title]
     @<%=singular_name%> = <%= class_name %>.new
 

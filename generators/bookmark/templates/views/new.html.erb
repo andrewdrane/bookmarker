@@ -1,4 +1,4 @@
-<%% form_for @<%= singular_name %>, :url=>"/<%=plural_name%>/submit" do |t| %>
+<%% form_for @<%= singular_name %>, :bookmarker_url=>"/<%=plural_name%>/submit" do |t| %>
   <%%= t.error_messages %>
   <p>
     <%%= t.label :title, 'Title' %><br>
@@ -6,8 +6,8 @@
   </p>
 
   <p>
-    <%%= t.label :url, 'Url' %><br>
-    <%%=  t.text_area :url, :value=>params[:url], :cols=>"80", :rows => "2" %>
+    <%%= t.label :bookmarker_url, 'Url' %><br>
+    <%%=  t.text_area :bookmarker_url, :value=>params[:bookmarker_url], :cols=>"80", :rows => "2" %>
   </p>
 
   <p>
