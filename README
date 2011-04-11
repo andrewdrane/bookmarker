@@ -1,4 +1,4 @@
-BOOKMARKER PLUGIN FOR RAILS. 
+BOOKMARKER PLUGIN FOR RAILS 2.x. 
 GENERATE A BOOKMARKING TOOL FOR YOUR RAILS APP!
 
 
@@ -103,6 +103,5 @@ javascript:(function()%20{var%20x=document.getElementsByTagName('head').item(0);
 
 
 Note April 10, 2011.
-It's come to my attention that "Url" is a reserve word in the current version of
-Rails. I am correcting this. Many thanks to Marmolin ( https://github.com/Marmolin )
-for pointing this out.
+This is not working with Rails 3.x yet, the generators are not yet compatible. I'll do some work on this one.
+It's come to my attention that "Url" is a reserve word in the current version of Rails. I am correcting this. Many thanks to Marmolin ( https://github.com/Marmolin ) for pointing this out. 
