@@ -1,4 +1,4 @@
-<%% form_for @<%= singular_name %>, :bookmarker_url=>"/<%=plural_name%>/submit" do |t| %>
+<%% form_for :<%= singular_name %>, :url=>"/<%=plural_name%>/submit" do |t| %>
   <%%= t.error_messages %>
   <p>
     <%%= t.label :title, 'Title' %><br>
